@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ศูนย์บริโภคแห่งโรงเรียน เมตตาวิทยา | Gourmet School Fair 2026</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* ==========================================
+           1. VARIABLES & BASE STYLES
+           ========================================== */
+        :root {
+            --primary-gold: #D4AF37;
+            --gold-light: #F3E5AB;
+            --gold-gradient: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            --bg-dark: #0B0E14;
+            --bg-card: #121824;
+            --bg-accent: #1A2332;
+            --text-light: #F8FAFC;
+            --text-muted: #94A3B8;
+            --text-gold: #E6C200;
+            --navy-deep: #0F172A;
+            --border-color: rgba(212, 175, 55, 0.25);
+            --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.15);
+            --font-main: 'Kanit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 90px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            color: var(--primary-gold);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--gold-gradient);
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            text-align: center;
+        }
+
+        .btn-gold {
+            background: var(--gold-gradient);
+            color: #000;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-outline-gold {
+            background: transparent;
+            color: var(--primary-gold);
+            border: 1px solid var(--primary-gold);
+        }
+
+        .btn-outline-gold:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: #FFF;
+            border-color: #FFF;
+            transform: translateY(-3px);
+        }
+
+        .btn-navy {
+            background: var(--bg-accent);
+            color: var(--text-light);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-navy:hover {
+            background: var(--navy-deep);
+            border-color: var(--primary-gold);
+            transform: translateY(-3px);
+        }
+
+        /* ==========================================
+           2. NAVBAR
+           ========================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 14, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            transition: var(--transition);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .logo-badge {
+            background: var(--gold-gradient);
+            color: #000;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .logo-text span {
+            color: var(--primary-gold);
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-link {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-light);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-gold);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 2px;
+            background-color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        /* ==========================================
+           3. HERO SECTION
+           ========================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 100px;
+            background: linear-gradient(to bottom, rgba(11, 14, 20, 0.6), var(--bg-dark)), 
+                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(15, 23, 42, 0.4) 0%, rgba(11, 14, 20, 0.95) 90%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 30px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--primary-gold);
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-title span {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            font-family: var(--font-serif);
+            font-style: italic;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .hero-meta {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+        }
+
+        .meta-item h4 {
+            color: var(--primary-gold);
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .meta-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================
+           4. ABOUT & HIGHLIGHTS
+           ========================================== */
+        .about-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .about-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 35px 25px;
+            border-radius: 16px;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .about-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-gold);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .about-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .about-card h3 {
+            font-size: 1.3rem;
+            color: var(--gold-light);
+            margin-bottom: 12px;
+        }
+
+        .about-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================
+           5. FEATURED ACTIVITIES (3 HIGHLIGHTS)
+           ========================================== */
+        .activities {
+            background: var(--bg-accent);
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .activity-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            transition: var(--transition);
+        }
+
+        .activity-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-gold);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .activity-img {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .activity-body {
+            padding: 25px;
+        }
+
+        .activity-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--primary-gold);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .activity-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .activity-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        /* ==========================================
+           6. MENU & REVIEWS
+           ========================================== */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: var(--transition);
+        }
+
+        .menu-card:hover {
+            background: rgba(212, 175, 55, 0.05);
+            border-color: var(--primary-gold);
+        }
+
+        .menu-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .menu-info {
+            flex-grow: 1;
+        }
+
+        .menu-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .menu-booth {
+            font-size: 0.85rem;
+            color: var(--primary-gold);
+        }
+
+        .rating-stars {
+            color: #FFD700;
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+
+        /* Review Section inside Menu */
+        .reviews-container {
+            margin-top: 50px;
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 35px;
+            border: 1px solid var(--border-color);
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .review-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .review-item {
+            background: var(--bg-accent);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 3px solid var(--primary-gold);
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            color: var(--gold-light);
+            font-size: 0.95rem;
+        }
+
+        .review-comment {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        /* ==========================================
+           7. SCHEDULE
+           ========================================== */
+        .schedule {
+            background: var(--bg-accent);
+        }
+
+        .schedule-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .tab-btn {
+            padding: 10px 24px;
+            border-radius: 30px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--gold-gradient);
+            color: #000;
+            border-color: transparent;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-gold);
+            box-shadow: 0 0 10px var(--primary-gold);
+        }
+
+        .timeline-time {
+            color: var(--primary-gold);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .timeline-content {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+
+        .timeline-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================
+           8. MAP & BOOTHS
+           ========================================== */
+        .map-wrapper {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            text-align: center;
+        }
+
+        .map-graphic {
+            width: 100%;
+            max-width: 900px;
+            height: 380px;
+            margin: 0 auto;
+            background: var(--bg-accent);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border: 1px dashed var(--primary-gold);
+            padding: 20px;
+        }
+
+        .map-zone-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .map-zone {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            transition: var(--transition);
+        }
+
+        .map-zone:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: var(--primary-gold);
+        }
+
+        .zone-title {
+            font-weight: 700;
+            color: var(--gold-light);
+            font-size: 1rem;
+        }
+
+        .zone-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* ==========================================
+           9. GALLERY
+           ========================================== */
+        .gallery {
+            background: var(--bg-accent);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 200px;
+            border: 1px solid var(--border-color);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(11, 14, 20, 0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 15px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* ==========================================
+           10. REGISTRATION & CONTACT & FOOTER
+           ========================================== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--navy-deep) 100%);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary-gold);
+        }
+
+        .contact-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        .contact-card p, .contact-card a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-card a:hover {
+            color: var(--primary-gold);
+        }
+
+        footer {
+            background: var(--bg-dark);
+            padding: 40px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 10px;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+
+        /* ==========================================
+           11. RESPONSIVE DESIGN
+           ========================================== */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            .map-zone-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar .container {
+                height: 70px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--bg-dark);
+                flex-direction: column;
+                justify-content: center;
+                gap: 25px;
+                transition: var(--transition);
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .map-zone-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <div class="logo-badge">M</div>
+                <div class="logo-text">
+                    เมตตาวิทยา
+                    <span>GOURMET FAIR 2026</span>
+                </div>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link">เกี่ยวกับงาน</a></li>
+                <li><a href="#activities" class="nav-link">กิจกรรมเด่น</a></li>
+                <li><a href="#menu" class="nav-link">เมนูไฮไลต์</a></li>
+                <li><a href="#schedule" class="nav-link">กำหนดการ</a></li>
+                <li><a href="#map" class="nav-link">ผังงาน</a></li>
+                <li><a href="#gallery" class="nav-link">แกลเลอรี</a></li>
+                <li><a href="#contact" class="nav-link">ติดต่อ</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-badge">✨ OPEN HOUSE & FOOD FAIR 2026</span>
+            <h1 class="hero-title">
+                ศูนย์บริโภคแห่งโรงเรียน
+                <span>เมตตาวิทยา</span>
+            </h1>
+            <p class="hero-description">
+                เปิดบ้านวิชาการการกินและตระการตากับตลาดนัดอาหารสุดพรีเมียม สัมผัสความอร่อยระดับ Fine Dining และแรงบันดาลใจจากเชฟรุ่นเยาว์
+            </p>
+
+            <div class="hero-cta-group">
+                <a href="#register" class="btn btn-gold">🎫 จองบัตรเข้าชมงาน</a>
+                <a href="#register" class="btn btn-outline-gold">✨ ลงทะเบียนเข้างานฟรี</a>
+                <a href="#map" class="btn btn-navy">🗺️ ดูแผนผังงานและร้านค้า</a>
+            </div>
+
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <h4>15 - 17 พฤศจิกายน 2569</h4>
+                    <p>ระยะเวลาจัดงาน 3 วันเต็ม</p>
+                </div>
+                <div class="meta-item">
+                    <h4>09.00 - 20.00 น.</h4>
+                    <p>เปิดให้บริการทุกวัน</p>
+                </div>
+                <div class="meta-item">
+                    <h4>โรงเรียนเมตตาวิทยา</h4>
+                    <p>หอประชุมใหญ่ และ ลานกิจกรรมกลางแจ้ง</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">WELCOME TO GOURMET EXPERIENCE</span>
+                <h2 class="section-title">เกี่ยวกับงาน</h2>
+            </div>
+            <div class="about-cards">
+                <div class="about-card">
+                    <div class="about-icon">🍽️</div>
+                    <h3>ศาสตร์และศิลป์แห่งอาหาร</h3>
+                    <p>ผสมผสานองค์ความรู้วิชาการเข้ากับการรังสรรค์เมนูระดับพรีเมียม ถ่ายทอดโดยนักเรียนและผู้เชี่ยวชาญ</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🎪</div>
+                    <h3>ตลาดนัดอาหารสุดพรีเมียม</h3>
+                    <p>รวบรวมร้านค้าเด็ด บูธอาหารโฮมเมด และเมนูฟิวชันระดับมิชลินชวนลิ้มลองมากกว่า 50 บูธ</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🎓</div>
+                    <h3>Open House นวัตกรรมอาหาร</h3>
+                    <p>นิทรรศการวิชาการอาหารแห่งอนาคต การแปรรูปอาหาร และโภชนาการยุคใหม่</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED ACTIVITIES (3 HIGHLIGHTS) -->
+    <section class="activities" id="activities">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">MUST-SEE HIGHLIGHTS</span>
+                <h2 class="section-title">กิจกรรมเด่น 3 อย่าง</h2>
+            </div>
+            <div class="activity-grid">
+                <!-- Highlight 1 -->
+                <div class="activity-card">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80" alt="MasterChef" class="activity-img">
+                    <div class="activity-body">
+                        <span class="activity-tag">COMPETITION</span>
+                        <h3 class="activity-title">แข่งขัน MasterChef รุ่นเล็ก</h3>
+                        <p class="activity-desc">การประชันฝีมือปรุงอาหารสุดท้าทายจากเชฟรุ่นเยาว์ รังสรรค์วัตถุดิบท้องถิ่นสู่เมนู Fine Dining คุณภาพเยี่ยม</p>
+                    </div>
+                </div>
+                <!-- Highlight 2 -->
+                <div class="activity-card">
+                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80" alt="Chef Show" class="activity-img">
+                    <div class="activity-body">
+                        <span class="activity-tag">LIVE SHOW</span>
+                        <h3 class="activity-title">สาธิตการทำอาหารจากเชฟ</h3>
+                        <p class="activity-desc">ชมเทคนิคและเคล็ดลับการประกอบอาหารระดับภัตตาคาร โดยเชฟรับเชิญพิเศษและอาจารย์ผู้เชี่ยวชาญด้านอาหาร</p>
+                    </div>
+                </div>
+                <!-- Highlight 3 -->
+                <div class="activity-card">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Free Tasting" class="activity-img">
+                    <div class="activity-body">
+                        <span class="activity-tag">EXCLUSIVE TASTING</span>
+                        <h3 class="activity-title">โซนลองชิมฟรี (Free Tasting)</h3>
+                        <p class="activity-desc">เปิดประสบการณ์การรับรสกับโซนชิมอาหารและขนมหวานนานาชนิด ปรุงสดใหม่ตลอดวัน ฟรีทุกบูธทดลอง</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU & REVIEWS -->
+    <section id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">GOURMET SELECTION</span>
+                <h2 class="section-title">เมนูไฮไลต์ & คะแนนรีวิว</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=200&q=80" alt="Menu" class="menu-img">
+                    <div class="menu-info">
+                        <div class="menu-name">สลัดทูน่าทรัฟเฟิล</div>
+                        <div class="menu-booth">บูธ A01 - M.4/1 Fine Cuisine</div>
+                        <div class="rating-stars">★★★★★ (5.0)</div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=200&q=80" alt="Menu" class="menu-img">
+                    <div class="menu-info">
+                        <div class="menu-name">พิซซ่าเตาถ่านโฮมเมด</div>
+                        <div class="menu-booth">บูธ A04 - Artisan Bakery</div>
+                        <div class="rating-stars">★★★★★ (4.9)</div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=200&q=80" alt="Menu" class="menu-img">
+                    <div class="menu-info">
+                        <div class="menu-name">พานาคอตต้าชาไทย</div>
+                        <div class="menu-booth">บูธ B02 - Sweet Laboratory</div>
+                        <div class="rating-stars">★★★★★ (4.8)</div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=200&q=80" alt="Menu" class="menu-img">
+                    <div class="menu-info">
+                        <div class="menu-name">สเต๊กเนื้อซอสไวน์แดง</div>
+                        <div class="menu-booth">บูธ C05 - Master Grill</div>
+                        <div class="rating-stars">★★★★★ (5.0)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Section -->
+            <div class="reviews-container">
+                <div class="reviews-header">
+                    <h3 style="color: var(--gold-light); font-size: 1.4rem;">💬 เสียงตอบรับจากผู้เข้าชมงาน</h3>
+                </div>
+                <div class="review-list">
+                    <div class="review-item">
+                        <div class="reviewer-name">คุณสมชาย (ผู้ปกครอง)</div>
+                        <div class="review-comment">"จัดงานได้หรูหราเกินคาด อาหารอร่อยมาก กิจกรรมแข่งขัน MasterChef สนุกและได้เห็นศักยภาพเด็กๆ"</div>
+                    </div>
+                    <div class="review-item">
+                        <div class="reviewer-name">น้องมินท์ (นักเรียนโรงเรียนอื่น)</div>
+                        <div class="review-comment">"โซนลองชิมฟรีจัดเต็มมาก ขนมหวานอร่อยระดับภัตตาคารเลยค่ะ ประทับใจมาก!"</div>
+                    </div>
+                    <div class="review-item">
+                        <div class="reviewer-name">เชฟอนันต์ (ศิษย์เก่า)</div>
+                        <div class="review-comment">"เห็นน้องๆ รังสรรค์เมนูแล้วภูมิใจมาก นวัตกรรมอาหารยุคใหม่น่าทึ่งจริงๆ"</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section class="schedule" id="schedule">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">EVENT SCHEDULE</span>
+                <h2 class="section-title">กำหนดการจัดงาน</h2>
+            </div>
+
+            <div class="schedule-tabs">
+                <button class="tab-btn active">15 พ.ย. 2569</button>
+                <button class="tab-btn">16 พ.ย. 2569</button>
+                <button class="tab-btn">17 พ.ย. 2569</button>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">09:00 - 10:00 น.</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">พิธีเปิดงาน "ศูนย์บริโภคแห่งโรงเรียน เมตตาวิทยา"</h4>
+                        <p class="timeline-desc">การแสดงเปิดงานชุด "การเดินทางของรสชาติ" และการกล่าวเปิดงานโดยผู้อำนวยการ</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">10:30 - 12:00 น.</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">การแข่งขัน MasterChef รุ่นเล็ก (รอบคัดเลือก)</h4>
+                        <p class="timeline-desc">ชมการรังสรรค์เมนูจากวัตถุดิบปริศนา โดยทีมนักเรียน ม.ปลาย</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">13:30 - 15:00 น.</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">โชว์สาธิตการทำอาหารFine Dining</h4>
+                        <p class="timeline-desc">เวิร์กชอปสเปเชียลเมนู โดยเชฟรับเชิญระดับมิชลิน</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">16:00 - 20:00 น.</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">เปิดโซน Free Tasting & ตลาดนัดอาหารรอบเย็น</h4>
+                        <p class="timeline-desc">เพลิดเพลินกับดนตรีสดและลิ้มลองอาหารหลากหลายจากกว่า 50 บูธ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP & BOOTHS -->
+    <section id="map">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">VENUE MAP</span>
+                <h2 class="section-title">ผังงานและโซนร้านค้า</h2>
+            </div>
+            <div class="map-wrapper">
+                <div class="map-graphic">
+                    <div class="map-zone-grid">
+                        <div class="map-zone">
+                            <span class="zone-title">ZONE A</span>
+                            <span class="zone-desc">Fine Dining & วิชาการ</span>
+                        </div>
+                        <div class="map-zone">
+                            <span class="zone-title">ZONE B</span>
+                            <span class="zone-desc">เวทีกลาง & แข่งขัน</span>
+                        </div>
+                        <div class="map-zone">
+                            <span class="zone-title">ZONE C</span>
+                            <span class="zone-desc">Free Tasting โซนลองชิม</span>
+                        </div>
+                        <div class="map-zone">
+                            <span class="zone-title">ZONE D</span>
+                            <span class="zone-desc">เบเกอรี่ & คาเฟ่</span>
+                        </div>
+                        <div class="map-zone">
+                            <span class="zone-title">ZONE E</span>
+                            <span class="zone-desc">ตลาดนัดอาหารนานาชาติ</span>
+                        </div>
+                        <div class="map-zone">
+                            <span class="zone-title">ZONE F</span>
+                            <span class="zone-desc">จุดลงทะเบียน & ของระลึก</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">PHOTO GALLERY</span>
+                <h2 class="section-title">บรรยากาศและแกลเลอรี</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Gallery 1" class="gallery-img">
+                    <div class="gallery-overlay"><span class="gallery-caption">บรรยากาศภายในงาน</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80" alt="Gallery 2" class="gallery-img">
+                    <div class="gallery-overlay"><span class="gallery-caption">อาหารตกแต่งสไตล์ Fine Dining</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" alt="Gallery 3" class="gallery-img">
+                    <div class="gallery-overlay"><span class="gallery-caption">การเตรียมวัตถุดิบสดใหม่</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?auto=format&fit=crop&w=600&q=80" alt="Gallery 4" class="gallery-img">
+                    <div class="gallery-overlay"><span class="gallery-caption">การแข่งขันทำอาหาร</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGISTRATION CTA -->
+    <section class="cta-section" id="register">
+        <div class="container">
+            <span class="section-subtitle">JOIN US</span>
+            <h2 class="section-title" style="margin-bottom: 20px;">สำรองที่นั่ง & เข้าร่วมงานฟรี</h2>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 30px;">
+                ลงทะเบียนล่วงหน้าเพื่อรับคูปองส่วนลดพิเศษภายในงาน และสิทธิ์เข้าชมโซน Free Tasting ก่อนใคร
+            </p>
+            <div class="hero-cta-group">
+                <a href="#" class="btn btn-gold" onclick="alert('ขอบคุณที่สนใจ! ระบบลงทะเบียนจำลองทำงานเรียบร้อยแล้ว'); return false;">🎫 จองบัตรเข้าชมงาน</a>
+                <a href="#" class="btn btn-outline-gold" onclick="alert('ลงทะเบียนเข้างานฟรีเรียบร้อยแล้ว!'); return false;">✨ ลงทะเบียนเข้างานฟรี</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">GET IN TOUCH</span>
+                <h2 class="section-title">ข้อมูลติดต่อ</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📘</div>
+                    <h4>Facebook Page</h4>
+                    <p><a href="https://facebook.com" target="_blank">ศูนย์บริโภคแห่งโรงเรียน เมตตาวิทยา</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📷</div>
+                    <h4>Instagram</h4>
+                    <p><a href="https://instagram.com" target="_blank">@mettavit_gourmetfair</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h4>สถานที่จัดงาน</h4>
+                    <p>โรงเรียนเมตตาวิทยา ถนนวิชาการ อ.เมือง จ.กรุงเทพฯ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">ศูนย์บริโภคแห่งโรงเรียน เมตตาวิทยา</div>
+            <p class="footer-text">© 2026 Mettavitaya School Gourmet Fair. Designed for M.4 High School Project.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Mobile Navigation Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when link clicked
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Simple Tab Switcher Simulation
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
